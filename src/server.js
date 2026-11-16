@@ -69,12 +69,11 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, "0.0.0.0", () => {
-  console.log("--------------------------------");
-  console.log("       DCO AI SERVER");
-  console.log("--------------------------------");
-  console.log("Status: ONLINE");
-  console.log(`Port: ${PORT}`);
-  console.log("Application: DCO Cyber Solutions");
-  console.log("--------------------------------");
-});
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log("DCO AI SERVER ONLINE");
+    console.log(`Port: ${PORT}`);
+  });
+}
+
+export default app;
