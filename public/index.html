@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d16">
+  <meta name="description" content="DCO AI - Your intelligent general-purpose AI assistant by DCO Cyber Solutions.">
+  <title>DCO AI | Intelligent Assistant</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-logo">D</div>
+        <div>
+          <h2>DCO <span>AI</span></h2>
+          <small>INTELLIGENCE PLATFORM</small>
+        </div>
+        <button class="icon-btn close-sidebar" id="closeSidebar" aria-label="Close menu">×</button>
+      </div>
+
+      <button class="new-chat" id="newChat">
+        <span>＋</span> New conversation
+      </button>
+
+      <div class="side-label">WORKSPACE</div>
+      <button class="side-link active" id="chatNav">◈ <span>AI Assistant</span></button>
+      <button class="side-link" id="historyNav">◷ <span>Recent conversations</span></button>
+
+      <div class="side-label tools-label">AI CAPABILITIES</div>
+      <div class="capability"><span>✎</span> Writing assistance</div>
+      <div class="capability"><span>⌘</span> Programming</div>
+      <div class="capability"><span>⌕</span> Research assistance</div>
+      <div class="capability"><span>▤</span> Document analysis</div>
+      <div class="capability"><span>⬡</span> Cybersecurity learning</div>
+
+      <div class="sidebar-bottom">
+        <div class="online-indicator"><i></i> AI PLATFORM</div>
+        <div class="company">POWERED BY <strong>DCO CYBER SOLUTIONS</strong></div>
+        <small class="version">DCO AI · VERSION 0.1.0</small>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <div class="top-title">DCO <span>AI</span></div>
+        <div class="top-status"><i></i> AI WORKSPACE</div>
+      </header>
+
+      <section class="chat-area" id="chatArea">
+        <div class="welcome" id="welcome">
+          <div class="welcome-orb">
+            <div class="orb-core">D</div>
+            <span class="orb-ring ring-one"></span>
+            <span class="orb-ring ring-two"></span>
+          </div>
+
+          <div class="eyebrow">YOUR INTELLIGENT ASSISTANT</div>
+          <h1>How can I help <span>you today?</span></h1>
+          <p class="welcome-description">
+            Ask questions, explore ideas, solve problems and get things done.
+            I'm DCO AI, your general-purpose AI assistant.
+          </p>
+
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Explain artificial intelligence in simple terms.">
+              <span>✧</span>
+              <strong>Learn something</strong>
+              <small>Explain a complex topic simply</small>
+            </button>
+            <button class="suggestion" data-prompt="Help me write a professional business proposal.">
+              <span>✎</span>
+              <strong>Write something</strong>
+              <small>Create professional content</small>
+            </button>
+            <button class="suggestion" data-prompt="Help me build a simple website using HTML, CSS and JavaScript.">
+              <span>⌘</span>
+              <strong>Build something</strong>
+              <small>Explore programming and code</small>
+            </button>
+            <button class="suggestion" data-prompt="Give me a practical business idea and explain how to start it.">
+              <span>◇</span>
+              <strong>Explore ideas</strong>
+              <small>Discover new possibilities</small>
+            </button>
+          </div>
+        </div>
+
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+
+      <footer class="composer-area">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" maxlength="6000"
+            placeholder="Message DCO AI..." aria-label="Message DCO AI"></textarea>
+          <div class="composer-bottom">
+            <div class="composer-hint"><span>✧</span> Ask anything. Explore everything.</div>
+            <button class="send-btn" id="sendBtn" type="submit" aria-label="Send message">
+              <span>↑</span>
+            </button>
+          </div>
+        </form>
+        <p class="disclaimer">DCO AI can make mistakes. Verify important information.</p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

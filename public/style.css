@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #090d16;
+  --panel: #0e1420;
+  --panel2: #121b2a;
+  --border: #202c3d;
+  --text: #edf3fc;
+  --muted: #8997aa;
+  --blue: #64a9ff;
+  --blue2: #367fdb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', Arial, sans-serif;
+  min-height: 100dvh;
+}
+
+button, textarea { font: inherit; }
+button { cursor: pointer; }
+
+.app-shell {
+  display: flex;
+  min-height: 100dvh;
+}
+
+.sidebar {
+  width: 265px;
+  flex-shrink: 0;
+  background: #0c121e;
+  border-right: 1px solid var(--border);
+  padding: 23px 17px;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 34px;
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #347bc9, #173a70);
+  font-size: 24px;
+  font-weight: 800;
+  box-shadow: 0 0 22px #347bc933;
+}
+
+.brand h2 { margin: 0; font-size: 20px; letter-spacing: 1px; }
+.brand h2 span, .top-title span { color: var(--blue); }
+.brand small { color: var(--muted); font-size: 9px; letter-spacing: 1.3px; }
+.close-sidebar { display: none !important; margin-left: auto; }
+
+.new-chat {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #29496c;
+  border-radius: 9px;
+  background: #14243a;
+  color: #dcecff;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.new-chat span { margin-right: 9px; font-size: 19px; }
+
+.side-label {
+  color: #73839a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin: 0 8px 12px;
+}
+.tools-label { margin-top: 31px; }
+
+.side-link {
+  background: transparent;
+  color: #9baabe;
+  border: 0;
+  text-align: left;
+  padding: 12px 10px;
+  border-radius: 7px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+}
+.side-link.active { background: #17253a; color: #83baff; }
+.capability { color: #9baabe; font-size: 12px; padding: 11px 10px; }
+.capability span { display: inline-block; width: 26px; color: #83baff; }
+
+.sidebar-bottom { margin-top: auto; padding-top: 25px; }
+.online-indicator { color: #a4b5c9; font-size: 11px; }
+.online-indicator i, .top-status i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #43c995;
+  border-radius: 50%;
+  margin-right: 7px;
+  box-shadow: 0 0 9px #43c99577;
+}
+.company { margin-top: 17px; color: #77869b; font-size: 9px; letter-spacing: 1px; }
+.company strong { display: block; color: #b6c7dc; margin-top: 5px; }
+.version { display: block; color: #64748b; font-size: 9px; margin-top: 14px; }
+
+.main-panel { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+
+.topbar {
+  height: 65px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  justify-content: space-between;
+}
+.top-title { font-size: 17px; font-weight: 800; letter-spacing: 1.5px; }
+.top-status { color: #8292a8; font-size: 9px; letter-spacing: 1.3px; }
+
+.icon-btn {
+  border: 0;
+  background: transparent;
+  color: #a9b9cc;
+  font-size: 22px;
+}
+.menu-btn { display: none; }
+
+.chat-area {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 35px 32px 15px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.welcome { max-width: 730px; margin: 35px auto 30px; text-align: center; }
+
+.welcome-orb {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 25px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.orb-core {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 19px;
+  background: linear-gradient(145deg, #397fc7, #152d55);
+  color: white;
+  font-size: 30px;
+  font-weight: 800;
+  box-shadow: 0 0 35px #398bdb44;
+  z-index: 2;
+}
+.orb-ring { position: absolute; border: 1px solid #4b92d966; border-radius: 50%; }
+.ring-one { width: 79px; height: 79px; }
+.ring-two { width: 100px; height: 100px; border-style: dashed; opacity: .6; }
+
+.eyebrow { color: #6e9fd7; font-size: 10px; letter-spacing: 2.5px; font-weight: 700; }
+.welcome h1 { font-size: clamp(28px, 5vw, 43px); letter-spacing: -1.5px; margin: 14px 0; }
+.welcome h1 span { color: var(--blue); }
+.welcome-description {
+  max-width: 530px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.suggestions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 35px;
+  text-align: left;
+}
+.suggestion {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #101827;
+  padding: 17px;
+  color: var(--text);
+  text-align: left;
+  transition: .2s;
+}
+.suggestion:hover { border-color: #477cb5; background: #152238; transform: translateY(-2px); }
+.suggestion span { display: block; color: var(--blue); font-size: 20px; margin-bottom: 12px; }
+.suggestion strong { display: block; font-size: 13px; margin-bottom: 6px; }
+.suggestion small { color: var(--muted); font-size: 11px; }
+
+.composer-area { width: 100%; max-width: 850px; margin: 0 auto; padding: 15px 28px 20px; }
+.composer {
+  border: 1px solid #2a3a50;
+  border-radius: 15px;
+  background: #111a29;
+  padding: 13px 15px 10px;
+  box-shadow: 0 10px 35px #0003;
+}
+.composer:focus-within { border-color: #4b8ed2; }
+.composer textarea {
+  width: 100%;
+  resize: none;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  min-height: 34px;
+  max-height: 150px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.composer textarea::placeholder { color: #718198; }
+.composer-bottom { display: flex; justify-content: space-between; align-items: center; }
+.composer-hint { font-size: 10px; color: #8192a8; }
+.composer-hint span { color: var(--blue); }
+.send-btn {
+  border: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  color: white;
+  background: #367fc9;
+  font-size: 23px;
+}
+.send-btn:disabled { opacity: .45; cursor: not-allowed; }
+.disclaimer { text-align: center; color: #68778b; font-size: 10px; margin: 12px 0 0; }
+
+.messages { display: flex; flex-direction: column; gap: 23px; padding-bottom: 25px; }
+.message { display: flex; gap: 12px; align-items: flex-start; }
+.message.user { flex-direction: row-reverse; }
+.avatar {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #1b3658;
+  color: #a8d2ff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 13px;
+}
+.message.assistant .avatar { background: #183a40; color: #78d8bb; }
+.bubble {
+  max-width: min(85%, 690px);
+  padding: 13px 16px;
+  border-radius: 13px;
+  background: #131e2e;
+  border: 1px solid #223148;
+  color: #dce6f3;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.message.user .bubble { background: #1b3555; border-color: #2c5078; }
+.message.error .bubble { border-color: #813d49; color: #ffb4bd; }
+.typing { color: #91a6c1; font-size: 12px; padding: 8px; }
+
+.mobile-overlay { display: none; }
+
+@media(max-width:760px) {
+  .sidebar {
+    position: fixed;
+    z-index: 20;
+    top: 0; bottom: 0; left: 0;
+    width: min(285px, 85vw);
+    transform: translateX(-105%);
+    transition: transform .25s;
+  }
+  .sidebar.open { transform: translateX(0); }
+  .close-sidebar { display: block !important; }
+  .mobile-overlay.show {
+    display: block;
+    position: fixed;
+    z-index: 15;
+    inset: 0;
+    background: #0009;
+  }
+  .menu-btn { display: block; }
+  .topbar { padding: 0 15px; height: 57px; }
+  .top-status { font-size: 8px; }
+  .chat-area { padding: 20px 15px 10px; }
+  .welcome { margin: 22px auto; }
+  .welcome-orb { transform: scale(.85); margin-bottom: 15px; }
+  .welcome h1 { font-size: 29px; }
+  .welcome-description { font-size: 12px; }
+  .suggestions { gap: 9px; margin-top: 25px; }
+  .suggestion { padding: 12px; }
+  .suggestion strong { font-size: 11px; }
+  .suggestion small { font-size: 10px; }
+  .composer-area { padding: 10px 12px 14px; }
+  .bubble { max-width: 88%; font-size: 12px; }
+}
